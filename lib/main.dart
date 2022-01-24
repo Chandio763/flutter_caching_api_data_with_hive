@@ -25,26 +25,26 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Material App',
-      home: MainScreen(),
+      home: HomePage(),
     );
   }
 }
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({
-    Key? key,
-  }) : super(key: key);
+// class MainScreen extends StatelessWidget {
+//   const MainScreen({
+//     Key? key,
+//   }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    print(Hive.box(Constants.SETTINGS_BOX).get("welcome_shown", defaultValue: false));
-    return ValueListenableBuilder<Box<dynamic>>(
-      valueListenable: Hive.box(Constants.SETTINGS_BOX).listenable(),
-      builder: (context, box, child) =>
-          const HomePage()
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     print(Hive.box(Constants.SETTINGS_BOX).get("welcome_shown", defaultValue: false));
+//     return ValueListenableBuilder<Box<dynamic>>(
+//       valueListenable: Hive.box(Constants.SETTINGS_BOX).listenable(),
+//       builder: (context, box, child) => 
+//           const HomePage()
+//     );
+//   }
+// }
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
